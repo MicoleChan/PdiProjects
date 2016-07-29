@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>&#x751f;&#x6210;TSL&#x6b8b;&#x635f;&#x7bb1;&#x62a5;&#x8868;</name>
+    <name>&#x751f;&#x6210;TSL&#x88c5;&#x5378;&#x8239;&#x53ca;&#x6c34;&#x95f8;&#x62a5;&#x8868;</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -124,8 +124,8 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>&#x8bfb;&#x53d6;NICT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>N</enabled> </hop>
+  <hop> <from>&#x8bfb;&#x53d6;NICT&#x7684;TSL&#x88c5;&#x5378;&#x8239;&#x53ca;&#x6c34;&#x95f8;&#x62a5;&#x8868;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>Y</enabled> </hop>
+  <hop> <from>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x88c5;&#x5378;&#x8239;&#x53ca;&#x6c34;&#x95f8;&#x62a5;&#x8868;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</name>
@@ -144,7 +144,7 @@
     <append>N</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>D&#x3a;&#x5c;Daily Reports&#x5c;TSL_DMG&#x5c;TSL_DMG_</name>
+      <name>D&#x3a;&#x5c;Daily Reports&#x5c;TSL_LD_DS_WG&#x5c;TSL_LD_DS_WG_</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -169,22 +169,27 @@
     </template>
     <fields>
       <field>
-        <name>CNTR_NO</name>
+        <name>GATEMODE</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>SEAL_NO1</name>
+        <name>CONTAINERNO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>SEAL_NO2</name>
+        <name>GATETIME</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>SEAL_NO3</name>
+        <name>SZTP</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>OPR</name>
         <type>String</type>
         <format/>
       </field>
@@ -194,87 +199,22 @@
         <format/>
       </field>
       <field>
-        <name>IX_CD</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>PTNR_CODE</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>SZTP2</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>GENTYPE</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>DMG_COND</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>REMARK</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>BL_NO</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>BOOKING_NO</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>WGT</name>
-        <type>Number</type>
-        <format>000000000.00000</format>
-      </field>
-      <field>
-        <name>CARGO_TYPE</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>IN_LINE</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>OUT_LINE</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
         <name>YARDPOSITION</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>AREA</name>
+        <name>SHIP</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>DISPATCH_MODE</name>
+        <name>TRUCK_NO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>VSL_NM</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>IN_VOY</name>
+        <name>TRUCK_NO2</name>
         <type>String</type>
         <format/>
       </field>
@@ -289,47 +229,32 @@
         <format/>
       </field>
       <field>
-        <name>IN_TIMNL_DATE</name>
-        <type>Timestamp</type>
-        <format/>
-      </field>
-      <field>
-        <name>STACKDAYS</name>
-        <type>BigNumber</type>
-        <format/>
-      </field>
-      <field>
-        <name>DOMESTIC_CHK</name>
+        <name>WGT</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>CNTR_STATE</name>
+        <name>SEAL_NO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>SET_TEMP</name>
+        <name>SEAL_NO2</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>IMDG</name>
+        <name>SEAL_NO3</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>UNNO</name>
+        <name>BOOKING_NO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>CNTR_COND</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-        <name>STORAGE_CODE</name>
+        <name>BL_NO</name>
         <type>String</type>
         <format/>
       </field>
@@ -365,7 +290,7 @@
     </step>
 
   <step>
-    <name>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</name>
+    <name>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x88c5;&#x5378;&#x8239;&#x53ca;&#x6c34;&#x95f8;&#x62a5;&#x8868;</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -376,11 +301,11 @@
            <schema_name/>
            </partitioning>
     <connection>CATOS</connection>
-    <sql>SELECT TI.CNTR_NO,&#xd;&#xa;       TI.SEAL_NO1,&#xd;&#xa;       TI.SEAL_NO2,&#xd;&#xa;       TI.SEAL_NO3,&#xd;&#xa;       TI.FE,&#xd;&#xa;       TI.IX_CD,&#xd;&#xa;       TI.PTNR_CODE,&#xd;&#xa;       TI.SZTP2 AS SZTP,&#xd;&#xa;       TG.PRI_CODE AS GenType,&#xd;&#xa;       TI.DMG_COND,&#xd;&#xa;       TI.REMARK,&#xd;&#xa;       TI.BL_NO,&#xd;&#xa;       TI.BOOKING_NO,&#xd;&#xa;       TI.WGT,&#xd;&#xa;       TI.CARGO_TYPE,&#xd;&#xa;       TB.IN_LANE,&#xd;&#xa;       TB.OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS YardPosition,&#xd;&#xa;       TI.AREA,&#xd;&#xa;       TI.DISPATCH_MODE,&#xd;&#xa;       TV.VSL_NM,&#xd;&#xa;       TB.IN_VOY,&#xd;&#xa;       TI.POL,&#xd;&#xa;       TI.POD,&#xd;&#xa;       TI.IN_TMNL_DATE,&#xd;&#xa;       round&#x28;sysdate - TI.in_tmnl_date, 1&#x29; AS StackDays,&#xd;&#xa;       TI.DOMESTIC_CHK,&#xd;&#xa;       TI.CNTR_STATE,&#xd;&#xa;       TI.SET_TEMP,&#xd;&#xa;       TI.IMDG,&#xd;&#xa;       TI.UNNO,&#xd;&#xa;       TI.CNTR_COND,&#xd;&#xa;       TI.STORAGE_CODE,&#xd;&#xa;       &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  from pcatos.tb_inventory TI&#xd;&#xa;  LEFT OUTER JOIN &#x28;SELECT TB_GSZTP.&#x2a;&#xd;&#xa;                     FROM PCATOS.TB_GSZTP&#xd;&#xa;                    WHERE &#x28;ISO_TYPE &#x3d; &#x27;&#x2a;&#x27;&#x29;&#x29; TG&#xd;&#xa;    ON TI.SZTP2 &#x3d; TG.ISO_CODE&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_VSL TV&#xd;&#xa;    ON TI.VSL_CD &#x3d; TV.VSL_CD&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_BERTHPLAN TB&#xd;&#xa;    ON &#x28;TI.VSL_CD &#x3d; TB.VSL_CD AND TI.CALL_YEAR &#x3d; TB.CALL_YEAR AND&#xd;&#xa;       TI.CALL_SEQ &#x3d; TB.CALL_SEQ&#x29;&#xd;&#xa; WHERE &#x28;TI.DMG_COND &#x3d; &#x27;R&#x27; OR TI.DMG_COND &#x3d; &#x27;M&#x27; OR TI.DMG_COND &#x3d; &#x27;H&#x27; OR&#xd;&#xa;       TI.DMG_COND &#x3d; &#x27;T&#x27;&#x29;&#xd;&#xa;   AND &#x28;TI.PTNR_CODE &#x3d; &#x27;TSL&#x27;&#x29;&#xd;&#xa;</sql>
+    <sql>select &#x28;CASE C.MOVE_TYPE&#xd;&#xa;         WHEN &#x27;BI&#x27; THEN&#xd;&#xa;          &#x27;IN&#x27;&#xd;&#xa;         WHEN &#x27;DS&#x27; THEN&#xd;&#xa;          &#x27;IN &#x27;&#xd;&#xa;         WHEN &#x27;BO&#x27; THEN&#xd;&#xa;          &#x27;OUT&#x27;&#xd;&#xa;         WHEN &#x27;LD&#x27; THEN&#xd;&#xa;          &#x27;OUT&#x27;&#xd;&#xa;         WHEN &#x27;BD&#x27; THEN&#xd;&#xa;          &#x27;IN&#x27;&#xd;&#xa;         WHEN &#x27;BL&#x27; THEN&#xd;&#xa;          &#x27;OUT&#x27;&#xd;&#xa;       END&#x29; AS &#x22;GATEMODE&#x22;,&#xd;&#xa;       CNTR_NO AS &#x22;ContainerNo&#x22;,&#xd;&#xa;       TO_CHAR&#x28;MOVE_DATE,&#x27;YYYY-MM-DD HH&#x3a;MI&#x3a;SS&#x27;&#x29; AS &#x22;GateTime&#x22;,&#xd;&#xa;       SZTP,&#xd;&#xa;       PTNR_CODE AS OPR,&#xd;&#xa;       FE,&#xd;&#xa;       &#x27;&#x27; AS &#x22;YardPosition&#x22;,VSL_CD&#x7c;&#x7c;&#x27;-&#x27;&#x7c;&#x7c;CALL_YEAR&#x7c;&#x7c;&#x27;-&#x27;&#x7c;&#x7c;CALL_SEQ AS &#x22;SHIP&#x22;,&#xd;&#xa;       TRUCK_NO,&#xd;&#xa;       TRUCK_NO2,&#xd;&#xa;       POL,&#xd;&#xa;       POD,&#xd;&#xa;       TO_CHAR&#x28;WGT&#x29; AS WGT,&#xd;&#xa;       SEAL_NO,&#xd;&#xa;       SEAL_NO2,&#xd;&#xa;       SEAL_NO3,&#xd;&#xa;       BOOKING_NO,&#xd;&#xa;       BL_NO,&#xd;&#xa;	   &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  from pcatos.tb_codeco c&#xd;&#xa; WHERE &#x28;&#x28;C.MOVE_TYPE &#x3d; &#x27;BI&#x27;&#x29; OR &#x28;C.MOVE_TYPE &#x3d; &#x27;BO&#x27;&#x29; OR&#xd;&#xa;       &#x28;C.MOVE_TYPE &#x3d; &#x27;DS&#x27;&#x29; OR &#x28;C.MOVE_TYPE &#x3d; &#x27;LD&#x27;&#x29; OR&#xd;&#xa;       &#x28;C.MOVE_TYPE &#x3d; &#x27;BD&#x27;&#x29; OR &#x28;C.MOVE_TYPE &#x3d; &#x27;BL&#x27;&#x29;&#x29;&#xd;&#xa;   AND C.PTNR_CODE &#x3d; &#x27;TSL&#x27; &#xd;&#xa;   AND MOVE_DATE BETWEEN TO_DATE &#x28;&#x27;&#x24;&#x7b;TimeSliceStart&#x7d;&#x27;,&#xd;&#xa;                                        &#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29;&#xd;&#xa;                           AND TO_DATE &#x28;&#x27;&#x24;&#x7b;TimeSliceEnd&#x7d;&#x27;,&#xd;&#xa;                                        &#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -391,7 +316,7 @@
     </step>
 
   <step>
-    <name>&#x8bfb;&#x53d6;NICT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</name>
+    <name>&#x8bfb;&#x53d6;NICT&#x7684;TSL&#x88c5;&#x5378;&#x8239;&#x53ca;&#x6c34;&#x95f8;&#x62a5;&#x8868;</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -402,11 +327,11 @@
            <schema_name/>
            </partitioning>
     <connection>CITOS</connection>
-    <sql>SELECT PC.CNTR AS CNTR_NO,&#xd;&#xa;       PC.SEAL_NO AS SEAL_NO1,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO2,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO3,&#xd;&#xa;       PC.E_F_ID AS FE,&#xd;&#xa;       PC.CNTR_CLASS AS IX_CD,&#xd;&#xa;       PC.CNTR_CORP_COD PTNR_CODE,&#xd;&#xa;       PC.CNTR_ISO AS SZTP2,&#xd;&#xa;       PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD AS GENTYPE,&#xd;&#xa;       PC.DAM_DISCRIBE AS DMG_COND,&#xd;&#xa;       &#x27;&#x27; AS REMARK,&#xd;&#xa;       PC.BILL_NO AS BL_NO,&#xd;&#xa;       PC.BOOKING_NO AS BOOKING_NO,&#xd;&#xa;       PC.CNTR_GROSS_WGT AS WGT,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;E&#x27; THEN &#x27;MT&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; THEN &#x27;GP&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.REEF_ID &#x3d; &#x27;1&#x27; THEN &#x27;RF&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.DANG_ID &#x3d; &#x27;1&#x27; THEN &#x27;DG&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.OOG_ID &#x3d; &#x27;1&#x27; THEN &#x27;AK&#x27;&#xd;&#xa;          ELSE &#x27;&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS CARGO_TYPE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.IN_TOOL_NO, PC.TRADE_ID&#x29; AS IN_LINE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.OUT_TOOL_NO, PC.TRADE_ID&#x29; AS OUT_LINE,&#xd;&#xa;       &#x27;&#x27; AS YARDPOSITION,&#xd;&#xa;       &#x27;&#x27; AS AREA,&#xd;&#xa;       &#x27;&#x27; AS DISPATCH_MODE,&#xd;&#xa;       D.E_SHIP_NAM AS VSL_NM,&#xd;&#xa;       S.VOYAGE AS IN_VOY,&#xd;&#xa;       PC.LOAD_PORT_COD AS POL,&#xd;&#xa;       PC.TRANS_PORT_COD AS POD,&#xd;&#xa;       PC.IN_PORT_TIM AS IN_TIMNL_DATE,&#xd;&#xa;       ROUND &#x28;&#xd;&#xa;          &#x28;CASE&#xd;&#xa;              WHEN PC.OUT_PORT_TIM IS NULL&#xd;&#xa;              THEN&#xd;&#xa;                 SYSDATE - NVL &#x28;PC.IN_PORT_TIM, PC.IN_CY_TIM&#x29; &#x2b; 1&#xd;&#xa;              ELSE&#xd;&#xa;                 PC.OUT_PORT_TIM - PC.IN_PORT_TIM &#x2b; 1&#xd;&#xa;           END&#x29;,&#xd;&#xa;          1&#x29;&#xd;&#xa;          AS STACKDAYS,&#xd;&#xa;       &#x27;&#x27; AS DOMESTIC_CHK,&#xd;&#xa;       &#x27;&#x27; AS CNTR_STATE,&#xd;&#xa;       PC.TEMP_SET AS SET_TEMP,&#xd;&#xa;       PC.DANG_CLASS AS IMDG,&#xd;&#xa;       PC.UNDG_NO AS UNNO,&#xd;&#xa;       &#x27;&#x27; AS CNTR_COND,&#xd;&#xa;       PC.CNTR_FLOW AS STORAGE_CODE,&#xd;&#xa;	   &#x27;NICT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM PORT_CNTR PC&#xd;&#xa;       LEFT JOIN SHIP S ON &#x28;PC.SHIP_NO &#x3d; S.SHIP_NO&#x29;&#xd;&#xa;       LEFT JOIN C_SHIP_DATA D ON &#x28;S.SHIP_COD &#x3d; D.SHIP_COD&#x29;&#xd;&#xa; WHERE     PC.CNTR_CORP_COD &#x3d; &#x27;TSL&#x27;&#xd;&#xa;       AND DAM_ID &#x3d; &#x27;1&#x27;&#xd;&#xa;</sql>
+    <sql>SELECT DECODE &#x28;SC.QUEUE_TYP, &#x27;SI&#x27;, &#x27;IN&#x27;, &#x27;OUT&#x27;&#x29; AS GATEMODE,&#xd;&#xa;       SC.CNTR AS CONTAINERNO,&#xd;&#xa;       TO_CHAR&#x28;SC.WORK_TIM,&#x27;YYYY-MM-DD HH&#x3a;MI&#x3a;SS&#x27;&#x29; AS GATETIME,&#xd;&#xa;       DECODE &#x28;PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD,&#xd;&#xa;               &#x27;20GP&#x27;, &#x27;22G0&#x27;,&#xd;&#xa;               &#x27;20HC&#x27;, &#x27;25G0&#x27;,&#xd;&#xa;               &#x27;20TK&#x27;, &#x27;22T0&#x27;,&#xd;&#xa;               &#x27;20FR&#x27;, &#x27;22P1&#x27;,&#xd;&#xa;               &#x27;20OT&#x27;, &#x27;22U0&#x27;,&#xd;&#xa;               &#x27;20RF&#x27;, &#x27;22R0&#x27;,&#xd;&#xa;               &#x27;20RH&#x27;, &#x27;25R0&#x27;,&#xd;&#xa;               &#x27;40GP&#x27;, &#x27;42G0&#x27;,&#xd;&#xa;               &#x27;40HC&#x27;, &#x27;45G0&#x27;,&#xd;&#xa;               &#x27;40OT&#x27;, &#x27;42U0&#x27;,&#xd;&#xa;               &#x27;40RH&#x27;, &#x27;45R0&#x27;,&#xd;&#xa;               PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD&#x29;&#xd;&#xa;          AS SZTP,&#xd;&#xa;       PC.CNTR_CORP_COD AS OPR,&#xd;&#xa;       PC.E_F_ID AS FE,&#xd;&#xa;       &#x27;&#x27; AS YARDPOSITION,&#xd;&#xa;       S.SHIP_COD &#x7c;&#x7c; S.VOYAGE AS SHIP,&#xd;&#xa;       &#x27;&#x27; AS TRUCK_NO,&#xd;&#xa;       &#x27;&#x27; AS TRUCK_NO2,&#xd;&#xa;       PC.LOAD_PORT_COD AS POL,&#xd;&#xa;       PC.TRANS_PORT_COD AS POD,&#xd;&#xa;       TO_CHAR&#x28;PC.CNTR_GROSS_WGT&#x29; AS WGT,&#xd;&#xa;       PC.SEAL_NO AS SEAL_NO,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO2,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO3,&#xd;&#xa;       PC.BOOKING_NO AS BOOKING_NO,&#xd;&#xa;       PC.BILL_NO AS BL_NO,&#xd;&#xa;       &#x27;NICT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM SYN_SHIP_COMMAND SC&#xd;&#xa;       LEFT JOIN SYN_PORT_CNTR PC ON &#x28;SC.CNTR_ARCH_ID &#x3d; PC.CNTR_ARCH_ID&#x29;&#xd;&#xa;       LEFT JOIN SHIP S ON &#x28;SC.SHIP_NO &#x3d; S.SHIP_NO&#x29;&#xd;&#xa; WHERE     S.SAILING_COD &#x3d; &#x27;TSL&#x27;&#xd;&#xa;       AND NVL &#x28;SHIFT_ID, &#x27;0&#x27;&#x29; &#x3d; &#x27;0&#x27;&#xd;&#xa;       AND SC.WORK_TIM BETWEEN TO_DATE &#x28;&#x27;&#x24;&#x7b;TimeSliceStart&#x7d;&#x27;,&#xd;&#xa;                                        &#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29;&#xd;&#xa;                           AND TO_DATE &#x28;&#x27;&#x24;&#x7b;TimeSliceStart&#x7d;&#x27;,&#xd;&#xa;                                        &#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>

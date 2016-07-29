@@ -141,7 +141,7 @@
       <yloc>144</yloc>
       </entry>
     <entry>
-      <name>&#x53d1;&#x9001;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;&#x90ae;&#x4ef6;</name>
+      <name>&#x53d1;&#x9001;&#x90ae;&#x4ef6;</name>
       <description/>
       <type>MAIL</type>
       <server>10.197.0.4</server>
@@ -182,7 +182,7 @@
       <yloc>144</yloc>
       </entry>
     <entry>
-      <name>&#x9644;&#x52a0;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;</name>
+      <name>&#x6dfb;&#x52a0;&#x90ae;&#x4ef6;&#x9644;&#x4ef6;</name>
       <description/>
       <type>ADD_RESULT_FILENAMES</type>
       <arg_from_previous>Y</arg_from_previous>
@@ -251,7 +251,7 @@
     </hop>
     <hop>
       <from>&#x751f;&#x6210;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;</from>
-      <to>&#x9644;&#x52a0;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;</to>
+      <to>&#x6dfb;&#x52a0;&#x90ae;&#x4ef6;&#x9644;&#x4ef6;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -259,8 +259,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>&#x9644;&#x52a0;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;</from>
-      <to>&#x53d1;&#x9001;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;&#x90ae;&#x4ef6;</to>
+      <from>&#x6dfb;&#x52a0;&#x90ae;&#x4ef6;&#x9644;&#x4ef6;</from>
+      <to>&#x53d1;&#x9001;&#x90ae;&#x4ef6;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -268,7 +268,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>&#x53d1;&#x9001;TSL&#x8fdb;&#x51fa;&#x573a;&#x62a5;&#x8868;&#x90ae;&#x4ef6;</from>
+      <from>&#x53d1;&#x9001;&#x90ae;&#x4ef6;</from>
       <to>&#x521b;&#x5efa;ETL&#x65e5;&#x5fd7;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
