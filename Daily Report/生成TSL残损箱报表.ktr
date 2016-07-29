@@ -125,7 +125,7 @@
   </connection>
   <order>
   <hop> <from>&#x8bfb;&#x53d6;NICT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>Y</enabled> </hop>
-  <hop> <from>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>N</enabled> </hop>
+  <hop> <from>&#x8bfb;&#x53d6;GOCT&#x7684;TSL&#x6b8b;&#x635f;&#x7bb1;&#x6570;&#x636e;</from><to>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>&#x751f;&#x6210;Excel&#x62a5;&#x8868;</name>
@@ -204,7 +204,7 @@
         <format/>
       </field>
       <field>
-        <name>SZTP2</name>
+        <name>SZTP</name>
         <type>String</type>
         <format/>
       </field>
@@ -235,8 +235,8 @@
       </field>
       <field>
         <name>WGT</name>
-        <type>Number</type>
-        <format>000000000.00000</format>
+        <type>String</type>
+        <format/>
       </field>
       <field>
         <name>CARGO_TYPE</name>
@@ -244,12 +244,12 @@
         <format/>
       </field>
       <field>
-        <name>IN_LINE</name>
+        <name>IN_LANE</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-        <name>OUT_LINE</name>
+        <name>OUT_LANE</name>
         <type>String</type>
         <format/>
       </field>
@@ -289,8 +289,8 @@
         <format/>
       </field>
       <field>
-        <name>IN_TIMNL_DATE</name>
-        <type>Timestamp</type>
+        <name>IN_TMNL_DATE</name>
+        <type>String</type>
         <format/>
       </field>
       <field>
@@ -376,7 +376,7 @@
            <schema_name/>
            </partitioning>
     <connection>CATOS</connection>
-    <sql>SELECT TI.CNTR_NO,&#xd;&#xa;       TI.SEAL_NO1,&#xd;&#xa;       TI.SEAL_NO2,&#xd;&#xa;       TI.SEAL_NO3,&#xd;&#xa;       TI.FE,&#xd;&#xa;       TI.IX_CD,&#xd;&#xa;       TI.PTNR_CODE,&#xd;&#xa;       TI.SZTP2 AS SZTP,&#xd;&#xa;       TG.PRI_CODE AS GenType,&#xd;&#xa;       TI.DMG_COND,&#xd;&#xa;       TI.REMARK,&#xd;&#xa;       TI.BL_NO,&#xd;&#xa;       TI.BOOKING_NO,&#xd;&#xa;       TI.WGT,&#xd;&#xa;       TI.CARGO_TYPE,&#xd;&#xa;       TB.IN_LANE,&#xd;&#xa;       TB.OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS YardPosition,&#xd;&#xa;       TI.AREA,&#xd;&#xa;       TI.DISPATCH_MODE,&#xd;&#xa;       TV.VSL_NM,&#xd;&#xa;       TB.IN_VOY,&#xd;&#xa;       TI.POL,&#xd;&#xa;       TI.POD,&#xd;&#xa;       TI.IN_TMNL_DATE,&#xd;&#xa;       round&#x28;sysdate - TI.in_tmnl_date, 1&#x29; AS StackDays,&#xd;&#xa;       TI.DOMESTIC_CHK,&#xd;&#xa;       TI.CNTR_STATE,&#xd;&#xa;       TI.SET_TEMP,&#xd;&#xa;       TI.IMDG,&#xd;&#xa;       TI.UNNO,&#xd;&#xa;       TI.CNTR_COND,&#xd;&#xa;       TI.STORAGE_CODE,&#xd;&#xa;       &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  from pcatos.tb_inventory TI&#xd;&#xa;  LEFT OUTER JOIN &#x28;SELECT TB_GSZTP.&#x2a;&#xd;&#xa;                     FROM PCATOS.TB_GSZTP&#xd;&#xa;                    WHERE &#x28;ISO_TYPE &#x3d; &#x27;&#x2a;&#x27;&#x29;&#x29; TG&#xd;&#xa;    ON TI.SZTP2 &#x3d; TG.ISO_CODE&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_VSL TV&#xd;&#xa;    ON TI.VSL_CD &#x3d; TV.VSL_CD&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_BERTHPLAN TB&#xd;&#xa;    ON &#x28;TI.VSL_CD &#x3d; TB.VSL_CD AND TI.CALL_YEAR &#x3d; TB.CALL_YEAR AND&#xd;&#xa;       TI.CALL_SEQ &#x3d; TB.CALL_SEQ&#x29;&#xd;&#xa; WHERE &#x28;TI.DMG_COND &#x3d; &#x27;R&#x27; OR TI.DMG_COND &#x3d; &#x27;M&#x27; OR TI.DMG_COND &#x3d; &#x27;H&#x27; OR&#xd;&#xa;       TI.DMG_COND &#x3d; &#x27;T&#x27;&#x29;&#xd;&#xa;   AND &#x28;TI.PTNR_CODE &#x3d; &#x27;TSL&#x27;&#x29;&#xd;&#xa;</sql>
+    <sql>SELECT TI.CNTR_NO,&#xd;&#xa;       TI.SEAL_NO1,&#xd;&#xa;       TI.SEAL_NO2,&#xd;&#xa;       TI.SEAL_NO3,&#xd;&#xa;       TI.FE,&#xd;&#xa;       TI.IX_CD,&#xd;&#xa;       TI.PTNR_CODE,&#xd;&#xa;       TI.SZTP2 AS SZTP,&#xd;&#xa;       TG.PRI_CODE AS GenType,&#xd;&#xa;       TI.DMG_COND,&#xd;&#xa;       TI.REMARK,&#xd;&#xa;       TI.BL_NO,&#xd;&#xa;       TI.BOOKING_NO,&#xd;&#xa;       TO_CHAR&#x28;TI.WGT&#x29; AS WGT,&#xd;&#xa;       TI.CARGO_TYPE,&#xd;&#xa;       TB.IN_LANE,&#xd;&#xa;       TB.OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS YardPosition,&#xd;&#xa;       TI.AREA,&#xd;&#xa;       TI.DISPATCH_MODE,&#xd;&#xa;       TV.VSL_NM,&#xd;&#xa;       TB.IN_VOY,&#xd;&#xa;       TI.POL,&#xd;&#xa;       TI.POD,&#xd;&#xa;       TO_CHAR&#x28;TI.IN_TMNL_DATE,&#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29; AS IN_TMNL_DATE,&#xd;&#xa;       round&#x28;sysdate - TI.in_tmnl_date, 1&#x29; AS StackDays,&#xd;&#xa;       TI.DOMESTIC_CHK,&#xd;&#xa;       TI.CNTR_STATE,&#xd;&#xa;       TI.SET_TEMP,&#xd;&#xa;       TI.IMDG,&#xd;&#xa;       TI.UNNO,&#xd;&#xa;       TI.CNTR_COND,&#xd;&#xa;       TI.STORAGE_CODE,&#xd;&#xa;       &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  from pcatos.tb_inventory TI&#xd;&#xa;  LEFT OUTER JOIN &#x28;SELECT TB_GSZTP.&#x2a;&#xd;&#xa;                     FROM PCATOS.TB_GSZTP&#xd;&#xa;                    WHERE &#x28;ISO_TYPE &#x3d; &#x27;&#x2a;&#x27;&#x29;&#x29; TG&#xd;&#xa;    ON TI.SZTP2 &#x3d; TG.ISO_CODE&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_VSL TV&#xd;&#xa;    ON TI.VSL_CD &#x3d; TV.VSL_CD&#xd;&#xa;  LEFT OUTER JOIN PCATOS.TB_BERTHPLAN TB&#xd;&#xa;    ON &#x28;TI.VSL_CD &#x3d; TB.VSL_CD AND TI.CALL_YEAR &#x3d; TB.CALL_YEAR AND&#xd;&#xa;       TI.CALL_SEQ &#x3d; TB.CALL_SEQ&#x29;&#xd;&#xa; WHERE &#x28;TI.DMG_COND &#x3d; &#x27;R&#x27; OR TI.DMG_COND &#x3d; &#x27;M&#x27; OR TI.DMG_COND &#x3d; &#x27;H&#x27; OR&#xd;&#xa;       TI.DMG_COND &#x3d; &#x27;T&#x27;&#x29;&#xd;&#xa;   AND &#x28;TI.PTNR_CODE &#x3d; &#x27;TSL&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -402,7 +402,7 @@
            <schema_name/>
            </partitioning>
     <connection>CITOS</connection>
-    <sql>SELECT PC.CNTR AS CNTR_NO,&#xd;&#xa;       PC.SEAL_NO AS SEAL_NO1,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO2,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO3,&#xd;&#xa;       PC.E_F_ID AS FE,&#xd;&#xa;       PC.CNTR_CLASS AS IX_CD,&#xd;&#xa;       PC.CNTR_CORP_COD PTNR_CODE,&#xd;&#xa;       PC.CNTR_ISO AS SZTP2,&#xd;&#xa;       PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD AS GENTYPE,&#xd;&#xa;       PC.DAM_DISCRIBE AS DMG_COND,&#xd;&#xa;       &#x27;&#x27; AS REMARK,&#xd;&#xa;       PC.BILL_NO AS BL_NO,&#xd;&#xa;       PC.BOOKING_NO AS BOOKING_NO,&#xd;&#xa;       PC.CNTR_GROSS_WGT AS WGT,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;E&#x27; THEN &#x27;MT&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; THEN &#x27;GP&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.REEF_ID &#x3d; &#x27;1&#x27; THEN &#x27;RF&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.DANG_ID &#x3d; &#x27;1&#x27; THEN &#x27;DG&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.OOG_ID &#x3d; &#x27;1&#x27; THEN &#x27;AK&#x27;&#xd;&#xa;          ELSE &#x27;&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS CARGO_TYPE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.IN_TOOL_NO, PC.TRADE_ID&#x29; AS IN_LINE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.OUT_TOOL_NO, PC.TRADE_ID&#x29; AS OUT_LINE,&#xd;&#xa;       &#x27;&#x27; AS YARDPOSITION,&#xd;&#xa;       &#x27;&#x27; AS AREA,&#xd;&#xa;       &#x27;&#x27; AS DISPATCH_MODE,&#xd;&#xa;       D.E_SHIP_NAM AS VSL_NM,&#xd;&#xa;       S.VOYAGE AS IN_VOY,&#xd;&#xa;       PC.LOAD_PORT_COD AS POL,&#xd;&#xa;       PC.TRANS_PORT_COD AS POD,&#xd;&#xa;       PC.IN_PORT_TIM AS IN_TIMNL_DATE,&#xd;&#xa;       ROUND &#x28;&#xd;&#xa;          &#x28;CASE&#xd;&#xa;              WHEN PC.OUT_PORT_TIM IS NULL&#xd;&#xa;              THEN&#xd;&#xa;                 SYSDATE - NVL &#x28;PC.IN_PORT_TIM, PC.IN_CY_TIM&#x29; &#x2b; 1&#xd;&#xa;              ELSE&#xd;&#xa;                 PC.OUT_PORT_TIM - PC.IN_PORT_TIM &#x2b; 1&#xd;&#xa;           END&#x29;,&#xd;&#xa;          1&#x29;&#xd;&#xa;          AS STACKDAYS,&#xd;&#xa;       &#x27;&#x27; AS DOMESTIC_CHK,&#xd;&#xa;       &#x27;&#x27; AS CNTR_STATE,&#xd;&#xa;       PC.TEMP_SET AS SET_TEMP,&#xd;&#xa;       PC.DANG_CLASS AS IMDG,&#xd;&#xa;       PC.UNDG_NO AS UNNO,&#xd;&#xa;       &#x27;&#x27; AS CNTR_COND,&#xd;&#xa;       PC.CNTR_FLOW AS STORAGE_CODE,&#xd;&#xa;	   &#x27;NICT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM PORT_CNTR PC&#xd;&#xa;       LEFT JOIN SHIP S ON &#x28;PC.SHIP_NO &#x3d; S.SHIP_NO&#x29;&#xd;&#xa;       LEFT JOIN C_SHIP_DATA D ON &#x28;S.SHIP_COD &#x3d; D.SHIP_COD&#x29;&#xd;&#xa; WHERE     PC.CNTR_CORP_COD &#x3d; &#x27;TSL&#x27;&#xd;&#xa;       AND DAM_ID &#x3d; &#x27;1&#x27;&#xd;&#xa;</sql>
+    <sql>SELECT PC.CNTR AS CNTR_NO,&#xd;&#xa;       PC.SEAL_NO AS SEAL_NO1,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO2,&#xd;&#xa;       &#x27;&#x27; AS SEAL_NO3,&#xd;&#xa;       PC.E_F_ID AS FE,&#xd;&#xa;       PC.CNTR_CLASS AS IX_CD,&#xd;&#xa;       PC.CNTR_CORP_COD PTNR_CODE,&#xd;&#xa;       DECODE &#x28;PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD,&#xd;&#xa;               &#x27;20GP&#x27;, &#x27;22G0&#x27;,&#xd;&#xa;               &#x27;20HC&#x27;, &#x27;25G0&#x27;,&#xd;&#xa;               &#x27;20TK&#x27;, &#x27;22T0&#x27;,&#xd;&#xa;               &#x27;20FR&#x27;, &#x27;22P1&#x27;,&#xd;&#xa;               &#x27;20OT&#x27;, &#x27;22U0&#x27;,&#xd;&#xa;               &#x27;20RF&#x27;, &#x27;22R0&#x27;,&#xd;&#xa;               &#x27;20RH&#x27;, &#x27;25R0&#x27;,&#xd;&#xa;               &#x27;40GP&#x27;, &#x27;42G0&#x27;,&#xd;&#xa;               &#x27;40HC&#x27;, &#x27;45G0&#x27;,&#xd;&#xa;               &#x27;40OT&#x27;, &#x27;42U0&#x27;,&#xd;&#xa;               &#x27;40RH&#x27;, &#x27;45R0&#x27;,&#xd;&#xa;               PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD&#x29;&#xd;&#xa;          AS SZTP,&#xd;&#xa;       PC.CNTR_SIZ_COD &#x7c;&#x7c; PC.CNTR_TYP_COD AS GENTYPE,&#xd;&#xa;       PC.DAM_DISCRIBE AS DMG_COND,&#xd;&#xa;       &#x27;&#x27; AS REMARK,&#xd;&#xa;       PC.BILL_NO AS BL_NO,&#xd;&#xa;       PC.BOOKING_NO AS BOOKING_NO,&#xd;&#xa;       TO_CHAR&#x28;PC.CNTR_GROSS_WGT&#x29; AS WGT,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;E&#x27; THEN &#x27;MT&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; THEN &#x27;GP&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.REEF_ID &#x3d; &#x27;1&#x27; THEN &#x27;RF&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.DANG_ID &#x3d; &#x27;1&#x27; THEN &#x27;DG&#x27;&#xd;&#xa;          WHEN PC.E_F_ID &#x3d; &#x27;F&#x27; AND PC.OOG_ID &#x3d; &#x27;1&#x27; THEN &#x27;AK&#x27;&#xd;&#xa;          ELSE &#x27;&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS CARGO_TYPE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.IN_TOOL_NO, PC.TRADE_ID&#x29; AS IN_LANE,&#xd;&#xa;       F_GET_SHIPLINE &#x28;PC.OUT_TOOL_NO, PC.TRADE_ID&#x29; AS OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS YARDPOSITION,&#xd;&#xa;       &#x27;&#x27; AS AREA,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN IN_TOOL_ID &#x3d; &#x27;1&#x27; THEN &#x27;EX&#x27;                    ---EXPORT,GATE IN&#xd;&#xa;          WHEN IN_TOOL_ID &#x3d; &#x27;3&#x27; THEN &#x27;DS&#x27;                         ---CESSEL IN&#xd;&#xa;       END&#xd;&#xa;          AS DISPATCH_MODE,&#xd;&#xa;       D.E_SHIP_NAM AS VSL_NM,&#xd;&#xa;       S.VOYAGE AS IN_VOY,&#xd;&#xa;       PC.LOAD_PORT_COD AS POL,&#xd;&#xa;       PC.TRANS_PORT_COD AS POD,&#xd;&#xa;       TO_CHAR&#x28;PC.IN_PORT_TIM,&#x27;YYYY-MM-DD HH24&#x3a;MI&#x3a;SS&#x27;&#x29; AS IN_TMNL_DATE,&#xd;&#xa;       ROUND &#x28;&#xd;&#xa;          &#x28;CASE&#xd;&#xa;              WHEN PC.OUT_PORT_TIM IS NULL&#xd;&#xa;              THEN&#xd;&#xa;                 SYSDATE - NVL &#x28;PC.IN_PORT_TIM, PC.IN_CY_TIM&#x29; &#x2b; 1&#xd;&#xa;              ELSE&#xd;&#xa;                 PC.OUT_PORT_TIM - PC.IN_PORT_TIM &#x2b; 1&#xd;&#xa;           END&#x29;,&#xd;&#xa;          1&#x29;&#xd;&#xa;          AS STACKDAYS,&#xd;&#xa;       CASE WHEN PC.TRADE_ID &#x3c;&#x3e; &#x27;1&#x27; THEN &#x27;1&#x27; ELSE &#x27;0&#x27; END AS DOMESTIC_CHK,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN PC.CURRENT_STAT &#x3d; &#x27;2&#x27; THEN &#x27;Y&#x27;                    ---&#x27;STACKING&#x27;&#xd;&#xa;          WHEN PC.CURRENT_STAT &#x3d; &#x27;4&#x27; AND PC.I_E_ID &#x3d; &#x27;I&#x27; THEN &#x27;O&#x27; ---&#x27;INCOMING&#x27;&#xd;&#xa;          WHEN PC.CURRENT_STAT &#x3d; &#x27;4&#x27; AND PC.I_E_ID &#x3d; &#x27;E&#x27; THEN &#x27;G&#x27; ---&#x27;OUTGOING&#x27;&#xd;&#xa;       --- WHEN THEN &#x27;UNDER SHIFTING&#x27;  ---&#x27;Z&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS CNTR_STATE,&#xd;&#xa;       PC.TEMP_SET AS SET_TEMP,&#xd;&#xa;       PC.DANG_CLASS AS IMDG,&#xd;&#xa;       PC.UNDG_NO AS UNNO,&#xd;&#xa;       &#x27;&#x27; CNTR_COND,&#xd;&#xa;       PC.CNTR_FLOW AS STORAGE_CODE,&#xd;&#xa;       &#x27;NICT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM PORT_CNTR PC&#xd;&#xa;       LEFT JOIN SHIP S ON &#x28;PC.SHIP_NO &#x3d; S.SHIP_NO&#x29;&#xd;&#xa;       LEFT JOIN C_SHIP_DATA D ON &#x28;S.SHIP_COD &#x3d; D.SHIP_COD&#x29;&#xd;&#xa; WHERE PC.CNTR_CORP_COD &#x3d; &#x27;TSL&#x27; AND DAM_ID &#x3d; &#x27;1&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
