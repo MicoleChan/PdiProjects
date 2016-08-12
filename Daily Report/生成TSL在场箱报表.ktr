@@ -209,7 +209,7 @@
         <format/>
       </field>
       <field>
-        <name>GENTYPE</name>
+        <name>GenType</name>
         <type>String</type>
         <format/>
       </field>
@@ -249,7 +249,7 @@
         <format/>
       </field>
       <field>
-        <name>YARDPOSITION</name>
+        <name>YardPosition</name>
         <type>String</type>
         <format/>
       </field>
@@ -279,7 +279,7 @@
         <format/>
       </field>
       <field>
-        <name>STACKDAYS</name>
+        <name>StackDays</name>
         <type>BigNumber</type>
         <format/>
       </field>
@@ -376,7 +376,7 @@
            <schema_name/>
            </partitioning>
     <connection>CATOS</connection>
-    <sql>SELECT TI.CNTR_NO,&#xd;&#xa;       TI.SEAL_NO1,&#xd;&#xa;       TI.SEAL_NO2,&#xd;&#xa;       TI.SEAL_NO3,&#xd;&#xa;       TI.FE,&#xd;&#xa;       TI.PTNR_CODE,&#xd;&#xa;       TI.SZTP2,&#xd;&#xa;       TI.VGM_CHK,&#xd;&#xa;       TG.PRI_CODE AS &#x22;GenType&#x22;,&#xd;&#xa;       TI.DMG_COND,&#xd;&#xa;       TI.DOMESTIC_CHK,&#xd;&#xa;       TI.BL_NO,&#xd;&#xa;       TI.BOOKING_NO,&#xd;&#xa;       TO_CHAR&#x28;TI.WGT&#x29; AS WGT,&#xd;&#xa;       TI.CARGO_TYPE,&#xd;&#xa;       TI.OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS &#x22;YardPosition&#x22;,&#xd;&#xa;       TI.DISPATCH_MODE,&#xd;&#xa;       TV.VSL_NM,&#xd;&#xa;       TI.POL,&#xd;&#xa;       TI.POD,&#xd;&#xa;       TO_CHAR&#x28;TI.IN_TMNL_DATE,&#x27;YYYY-MM-DD HH&#x3a;MI&#x3a;SS&#x27;&#x29; AS IN_TMNL_DATE,&#xd;&#xa;       ROUND &#x28;SYSDATE - TI.in_tmnl_date, 1&#x29; AS &#x22;StackDays&#x22;,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN TI.FE &#x3d; &#x27;F&#x27; AND &#x28;ROUND &#x28;SYSDATE - TI.in_tmnl_date, 1&#x29; &#x3e;&#x3d; 20&#x29;&#xd;&#xa;          THEN&#xd;&#xa;             &#x27;&#x8d85;&#x8fc7;30&#x5929;&#x5c06;&#x4f1a;&#x4ea7;&#x751f;&#x8d39;&#x7528;&#x27;&#xd;&#xa;          ELSE&#xd;&#xa;             &#x27;&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS &#x22;&#x8d85;&#x671f;&#x22;,&#xd;&#xa;       TI.CNTR_COND,&#xd;&#xa;       TI.SET_TEMP,&#xd;&#xa;       TI.IMDG,&#xd;&#xa;       TI.UNNO,&#xd;&#xa;       TI.STORAGE_CODE,&#xd;&#xa;       TI.IX_CD,&#xd;&#xa;       TI.TRANS_TYPE,&#xd;&#xa;       TI.TRUCK_NO,&#xd;&#xa;       CASE WHEN NVL &#x28;TI.DMG_COND, &#x27;S&#x27;&#x29; &#x3c;&#x3e; &#x27;S&#x27; THEN TI.REMARK ELSE &#x27;&#x27; END&#xd;&#xa;          REMARK,&#xd;&#xa;		 &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM pcatos.tb_inventory TI&#xd;&#xa;       LEFT OUTER JOIN &#x28;SELECT TB_GSZTP.&#x2a;&#xd;&#xa;                          FROM PCATOS.TB_GSZTP&#xd;&#xa;                         WHERE &#x28;ISO_TYPE &#x3d; &#x27;&#x2a;&#x27;&#x29;&#x29; TG&#xd;&#xa;          ON TI.SZTP2 &#x3d; TG.ISO_CODE&#xd;&#xa;       LEFT OUTER JOIN PCATOS.TB_VSL TV ON TI.VSL_CD &#x3d; TV.VSL_CD&#xd;&#xa; WHERE &#x28;TI.PTNR_CODE &#x3d; &#x27;TSL&#x27;&#x29;</sql>
+    <sql>SELECT TI.CNTR_NO,&#xd;&#xa;       TI.SEAL_NO1,&#xd;&#xa;       TI.SEAL_NO2,&#xd;&#xa;       TI.SEAL_NO3,&#xd;&#xa;       TI.FE,&#xd;&#xa;       TI.PTNR_CODE,&#xd;&#xa;       TI.SZTP2,&#xd;&#xa;       TI.VGM_CHK,&#xd;&#xa;       TG.PRI_CODE AS &#x22;GenType&#x22;,&#xd;&#xa;       TI.DMG_COND,&#xd;&#xa;       TI.DOMESTIC_CHK,&#xd;&#xa;       TI.BL_NO,&#xd;&#xa;       TI.BOOKING_NO,&#xd;&#xa;       TO_CHAR&#x28;TI.WGT&#x29; AS WGT,&#xd;&#xa;       TI.CARGO_TYPE,&#xd;&#xa;       TI.OUT_LANE,&#xd;&#xa;       &#x27;&#x27; AS &#x22;YardPosition&#x22;,&#xd;&#xa;       TI.DISPATCH_MODE,&#xd;&#xa;       TV.VSL_NM,&#xd;&#xa;       TI.POL,&#xd;&#xa;       TI.POD,&#xd;&#xa;       TO_CHAR&#x28;TI.IN_TMNL_DATE,&#x27;YYYY-MM-DD HH&#x3a;MI&#x3a;SS&#x27;&#x29; AS IN_TMNL_DATE,&#xd;&#xa;       ROUND &#x28;SYSDATE - TI.in_tmnl_date, 1&#x29; AS &#x22;StackDays&#x22;,&#xd;&#xa;       CASE&#xd;&#xa;          WHEN TI.FE &#x3d; &#x27;F&#x27; AND &#x28;ROUND &#x28;SYSDATE - TI.in_tmnl_date, 1&#x29; &#x3e;&#x3d; 20&#x29;&#xd;&#xa;          THEN&#xd;&#xa;             &#x27;&#x8d85;&#x8fc7;30&#x5929;&#x5c06;&#x4f1a;&#x4ea7;&#x751f;&#x8d39;&#x7528;&#x27;&#xd;&#xa;          ELSE&#xd;&#xa;             &#x27;&#x27;&#xd;&#xa;       END&#xd;&#xa;          AS &#x22;&#x8d85;&#x671f;&#x22;,&#xd;&#xa;       TI.CNTR_COND,&#xd;&#xa;       TO_CHAR&#x28;TI.SET_TEMP&#x29; AS SET_TEMP,&#xd;&#xa;       TI.IMDG,&#xd;&#xa;       TI.UNNO,&#xd;&#xa;       TI.STORAGE_CODE,&#xd;&#xa;       TI.IX_CD,&#xd;&#xa;       TI.TRANS_TYPE,&#xd;&#xa;       TI.TRUCK_NO,&#xd;&#xa;       CASE WHEN NVL &#x28;TI.DMG_COND, &#x27;S&#x27;&#x29; &#x3c;&#x3e; &#x27;S&#x27; THEN TI.REMARK ELSE &#x27;&#x27; END&#xd;&#xa;          REMARK,&#xd;&#xa;		 &#x27;GOCT&#x27; AS TERMINAL_CODE&#xd;&#xa;  FROM pcatos.tb_inventory TI&#xd;&#xa;       LEFT OUTER JOIN &#x28;SELECT TB_GSZTP.&#x2a;&#xd;&#xa;                          FROM PCATOS.TB_GSZTP&#xd;&#xa;                         WHERE &#x28;ISO_TYPE &#x3d; &#x27;&#x2a;&#x27;&#x29;&#x29; TG&#xd;&#xa;          ON TI.SZTP2 &#x3d; TG.ISO_CODE&#xd;&#xa;       LEFT OUTER JOIN PCATOS.TB_VSL TV ON TI.VSL_CD &#x3d; TV.VSL_CD&#xd;&#xa; WHERE &#x28;TI.PTNR_CODE &#x3d; &#x27;TSL&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

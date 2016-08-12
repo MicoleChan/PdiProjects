@@ -71,19 +71,19 @@
       <type>SPECIAL</type>
       <start>Y</start>
       <dummy>N</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
+      <repeat>Y</repeat>
+      <schedulerType>2</schedulerType>
       <intervalSeconds>0</intervalSeconds>
       <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
+      <hour>9</hour>
       <minutes>0</minutes>
       <weekDay>1</weekDay>
       <DayOfMonth>1</DayOfMonth>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>112</yloc>
+      <xloc>576</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>&#x53d1;&#x9001;TSL&#x5728;&#x573a;&#x7bb1;&#x62a5;&#x8868;</name>
